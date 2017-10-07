@@ -1,6 +1,6 @@
 from Collections.MyList import MyList
 
-foo = MyList(22)
+foo = MyList()
 foo.append(2)
 print(foo)
 
