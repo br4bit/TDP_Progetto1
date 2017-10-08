@@ -31,6 +31,21 @@ class MyList:
     def clear(self):
         self.__init__()
 
+    def reverse(self):
+        temp = None
+        curr_node = self._head
+        # Swap next and prev for all nodes of
+        # doubly linked list
+        while curr_node is not None:
+            temp = curr_node._prev
+            curr_node._prev = curr_node._next # the previously is the next of the current node
+            curr_node._next = temp # the next will be the previously of current before swap
+            curr_node = curr_node._prev # update current node to previously
+        # Before changing head, check for the cases like
+        # empty list and list with only one node
+        if temp is not None:
+            self._head = temp._prev
+
     def pop(self, i=None):
         result = " "
         if i is None:
