@@ -33,17 +33,17 @@ class MyList:
         """Remove all items from the list"""
         self.__init__()
 
-    def remove(self,x):
+    def remove(self, x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
-        curr_node=self._head
+        curr_node = self._head
         k = 0
         while curr_node is not None:
             if curr_node._value == x:
                 return self.pop(k)
-            k+=1
+            k += 1
             curr_node = curr_node._next
         else:
-            return 'No such '+str(x)
+            return 'No such ' + str(x)
 
     def reverse(self):
         """Reverse the elements of the list in place."""
@@ -53,9 +53,9 @@ class MyList:
         # doubly linked list
         while curr_node is not None:
             temp = curr_node._prev
-            curr_node._prev = curr_node._next # the previously is the next of the current node
-            curr_node._next = temp # the next will be the previously of current before swap
-            curr_node = curr_node._prev # update current node to previously
+            curr_node._prev = curr_node._next  # the previously is the next of the current node
+            curr_node._next = temp  # the next will be the previously of current before swap
+            curr_node = curr_node._prev  # update current node to previously
         # Before changing head, check for the cases like
         # empty list and list with only one node
         if temp is not None:
@@ -113,3 +113,20 @@ class MyList:
             result += '{0},'.format(str(curr_node._value))
             curr_node = curr_node._next
         return '[' + result[:-1] + ']'
+
+    def __bool__(self):
+        if self._head:
+            return True
+        else:
+            return False
+
+    def __getitem__(self, item):
+        curr_node = self._head
+        k = 0
+        while curr_node is not None:
+            if curr_node._value == item:
+                return k
+            k += 1
+            curr_node = curr_node._next
+        else:
+            return 'No item'
