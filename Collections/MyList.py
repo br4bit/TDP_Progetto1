@@ -28,6 +28,9 @@ class MyList:
         else:  # if the head is None there aren't node, so the new node is tail and the head
             self._head = self._tail = _node
 
+    def clear(self):
+        self.__init__()
+
     def pop(self, i=None):
         result = " "
         if i is None:
