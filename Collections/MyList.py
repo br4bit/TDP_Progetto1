@@ -1,4 +1,4 @@
-import Collections.Node
+from Collections.Node import Node
 
 
 class MyList:
@@ -19,7 +19,7 @@ class MyList:
 
     def append(self, x):
         """Add an item to the end of the list."""
-        _node = Collections.Node.Node(x, None, None)
+        _node = Node(x, None, None)
         if self._head is not None:  # if the head is not None the previously of new node become the tail and the
             #  next one None
             _node._prev = self._tail  # previously of new node linked to tail
@@ -32,6 +32,40 @@ class MyList:
     def clear(self):
         """Remove all items from the list"""
         self.__init__()
+
+    def isEmpty(self):
+        if self.__bool__():
+            return False
+        else:
+            return True
+
+    def insert(self,i,x):
+        new_node = Node(x,None,None)
+        curr_node = self._head
+        if i > self.__len__():
+            return 'index out of range'
+        #list is empty
+        if self.isEmpty():
+            self._head = new_node
+            self._head._prev = self._head
+        else:
+            if i == 0:
+                new_node._next = self._head
+                self._head = new_node
+                if self.__len__() == 0:
+                    self._tail = new_node
+                return
+            elif i == self.__len__():
+                self.append(new_node._value)
+                return
+            for k in range (0,i - 1):
+                print('ciao')
+                curr_node = curr_node._next
+                new_node._next = curr_node._next
+                new_node._prev = curr_node
+                if curr_node._next is not None:
+                    curr_node._next._prev = new_node
+                curr_node._next = new_node
 
     def remove(self, x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
@@ -49,6 +83,7 @@ class MyList:
         """Reverse the elements of the list in place."""
         temp = None
         curr_node = self._head
+        self._tail = curr_node
         # Swap next and prev for all nodes of
         # doubly linked list
         while curr_node is not None:
