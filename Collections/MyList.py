@@ -66,19 +66,18 @@ class MyList:
             curr_node = self._head
             k = 0
             try:
+                if i == 0:
+                    self._head = curr_node._next
+                    return curr_node._value
+                elif i == self.__len__() - 1:
+                    result = self._tail
+                    self._tail = result._prev
+                    self._tail._next = None
+                    return result._value
+                elif i > self.__len__():
+                    raise AttributeError
                 while True:
-                    if i > self.__len__():
-                        break;
-                    elif i == 0:
-                        self._head = curr_node._next
-                        result = curr_node
-                        break;
-                    elif i == self.__len__ () - 1:
-                        result = self._tail
-                        self._tail = result._prev
-                        self._tail._next = None
-                        break;
-                    elif k == i and k < self.__len__():
+                    if k == i and k < self.__len__():
                         result = curr_node
                         curr_node._prev._next = curr_node._next
                         curr_node._next._prev = curr_node._prev
