@@ -42,11 +42,11 @@ class MyList:
                 while True:
                     if i > self.__len__():
                         break;
-                    if i == 0:
+                    elif i == 0:
                         self._head = curr_node._next
                         result = curr_node
                         break;
-                    if i == self.__len__ () - 1:
+                    elif i == self.__len__ () - 1:
                         result = self._tail
                         self._tail = result._prev
                         self._tail._next = None
