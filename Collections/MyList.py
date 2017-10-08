@@ -35,6 +35,15 @@ class MyList:
 
     def remove(self,x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
+        curr_node=self._head
+        k = 0
+        while curr_node is not None:
+            if curr_node._value == x:
+                return self.pop(k)
+            k+=1
+            curr_node = curr_node._next
+        else:
+            return 'No such '+str(x)
 
     def reverse(self):
         """Reverse the elements of the list in place."""
