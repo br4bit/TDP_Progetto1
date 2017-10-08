@@ -1,4 +1,4 @@
-from Collections.Node import Node
+import Collections.Node
 
 
 class MyList:
@@ -18,20 +18,62 @@ class MyList:
                             self.append(element)
 
     def append(self, x):
-        _node = Node(x, None, None)
-        if self._head is not None:  # se la testa non è None allora il precedente del nuovo nodo diventa la coda e il successivo None
-            _node._prev = self._tail  # il prcedente del nuovo nodo linka alla coda
-            _node._next = None  # il successivo del nuovo nodo linka a None
-            self._tail._next = _node  # il successivo della coda linka al nuovo nodo
-            self._tail = _node  # il nuovo nodo è anche la nuova coda
-        else:  # se la testa è None allora non c'è ancora nessun nodo, quindi il nuovo nodo è anche la coda
+        _node = Collections.Node.Node(x, None, None)
+        if self._head is not None:  # if the head is not None the previously of new node become the tail and the
+            #  next one None
+            _node._prev = self._tail  # previously of new node linked to tail
+            _node._next = None  # the next of new new node linked to None
+            self._tail._next = _node  # the tail's next linked to new node
+            self._tail = _node  # new node become the tail
+        else:  # if the head is None there aren't node, so the new node is tail and the head
             self._head = self._tail = _node
 
+    def pop(self, i=None):
+        result = " "
+        if i is None:
+            ris = self._tail
+            self._tail = ris._prev
+            self._tail._next = None
+            return ris._value
+        else:
+            curr_node = self._head
+            k = 0
+            try:
+                while True:
+                    if i > self.__len__():
+                        break;
+                    if i == 0:
+                        self._head = curr_node._next
+                        result = curr_node
+                        break;
+                    if i == self.__len__ () - 1:
+                        result = self._tail
+                        self._tail = result._prev
+                        self._tail._next = None
+                        break;
+                    elif k == i and k < self.__len__():
+                        result = curr_node
+                        curr_node._prev._next = curr_node._next
+                        curr_node._next._prev = curr_node._prev
+                        break;
+                    k += 1
+                    curr_node = curr_node._next
+            except AttributeError:
+                return 'out of range'
+            return result._value
+
+    def __len__(self):
+        i = 1
+        node_iter = self._head
+        while node_iter._next is not None:
+            i += 1
+            node_iter = node_iter._next
+        return i
 
     def __str__(self):
         result = ""
         curr_node = self._head
         while curr_node is not None:
-            result+='['+str(curr_node._value)+'],'
-            curr_node=curr_node._next
-        return result
+            result += '{0},'.format(str(curr_node._value))
+            curr_node = curr_node._next
+        return '[' + result[:-1] + ']'
