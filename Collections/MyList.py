@@ -18,6 +18,7 @@ class MyList:
                             self.append(element)
 
     def append(self, x):
+        """Add an item to the end of the list."""
         _node = Collections.Node.Node(x, None, None)
         if self._head is not None:  # if the head is not None the previously of new node become the tail and the
             #  next one None
@@ -29,9 +30,14 @@ class MyList:
             self._head = self._tail = _node
 
     def clear(self):
+        """Remove all items from the list"""
         self.__init__()
 
+    def remove(self,x):
+        """Remove the first item from the list whose value is x. It is an error if there is no such item."""
+
     def reverse(self):
+        """Reverse the elements of the list in place."""
         temp = None
         curr_node = self._head
         # Swap next and prev for all nodes of
@@ -47,7 +53,10 @@ class MyList:
             self._head = temp._prev
 
     def pop(self, i=None):
-        result = " "
+        """Remove the item at the given position in the list, and return it. If no index is specified,
+        a.pop() removes and returns the last item in the list. (The square brackets around the i in the method
+        signature denote that the parameter is optional, not that you should type square brackets at that position. """
+        result = None
         if i is None:
             ris = self._tail
             self._tail = ris._prev
