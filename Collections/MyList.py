@@ -84,7 +84,7 @@ class MyList:
                     self._tail = result._prev
                     self._tail._next = None
                     return result._value
-                elif i > self.__len__():
+                elif i >= self.__len__():
                     raise AttributeError
                 while k < self.__len__():
                     if k == i:
