@@ -58,14 +58,15 @@ class MyList:
             elif i == self.__len__():
                 self.append(new_node._value)
                 return
-            for k in range (0,i - 1):
-                print('ciao')
-                curr_node = curr_node._next
-                new_node._next = curr_node._next
-                new_node._prev = curr_node
-                if curr_node._next is not None:
-                    curr_node._next._prev = new_node
+            else:
+                for k in range(0, i-1):
+                  curr_node = curr_node._next
+                  new_node._next = curr_node._next
+                  new_node._prev = curr_node
+                  if curr_node._next is not None:
+                     curr_node._next._prev = new_node
                 curr_node._next = new_node
+
 
     def remove(self, x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
