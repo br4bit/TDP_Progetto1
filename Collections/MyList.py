@@ -77,6 +77,7 @@ class MyList:
             try:
                 if i == 0:
                     self._head = curr_node._next
+                    self._head._prev = None
                     return curr_node._value
                 elif i == self.__len__() - 1:
                     result = self._tail
@@ -85,8 +86,8 @@ class MyList:
                     return result._value
                 elif i > self.__len__():
                     raise AttributeError
-                while True:
-                    if k == i and k < self.__len__():
+                while k < self.__len__():
+                    if k == i:
                         result = curr_node
                         curr_node._prev._next = curr_node._next
                         curr_node._next._prev = curr_node._prev
