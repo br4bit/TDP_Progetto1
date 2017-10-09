@@ -182,6 +182,9 @@ class MyList:
                 return curr_node
             curr_node = curr_node._next
 
+    def __contains__(self, element):
+        return True if self.count(element) != 0 else False
+
     def __add__(self, other):
         """adds a an iterable data structure to the double linked list"""
         ret_my_list = MyList()
