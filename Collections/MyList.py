@@ -54,6 +54,9 @@ class MyList:
         for value in iterable:
             self.append(value)
 
+    def copy(self):
+        return self.__add__()
+
     def insert(self,i,x):
         new_node = Node(x,None,None)
         curr_node = self._head
@@ -81,7 +84,6 @@ class MyList:
                   if curr_node._next is not None:
                      curr_node._next._prev = new_node
                 curr_node._next = new_node
-
 
     def remove(self, x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
@@ -185,11 +187,13 @@ class MyList:
     def __contains__(self, element):
         return True if self.count(element) != 0 else False
 
-    def __add__(self, other):
+    def __add__(self, other=None):
         """adds a an iterable data structure to the double linked list"""
         ret_my_list = MyList()
         for item in self:
             ret_my_list.append(item._value)
-        for item in other:
-            ret_my_list.append(item)
+        if other is not None:
+            for item in other:
+                ret_my_list.append(item)
         return ret_my_list
+

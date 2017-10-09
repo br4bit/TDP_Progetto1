@@ -25,3 +25,5 @@ foo3 = [10,11,12,13]
 print(foo.__getitem__(13)._value)
 print(foo.__add__(foo3))
 print(foo.count(5))
+print(2 in foo)
+print(foo.copy())
