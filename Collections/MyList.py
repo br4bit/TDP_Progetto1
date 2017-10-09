@@ -97,6 +97,12 @@ class MyList:
         else:
             return 'No such ' + str(x)
 
+    def index(self,x=None,start=None,end=None):
+        """Return zero-based index in the list of the first item whose value is x. Raises a ValueError if there is no such item.
+            The optional arguments start and end are interpreted as in the slice notation and are used to limit
+             the search to a particular subsequence of the list. The returned index is computed relative to the beginning
+              of the full sequence rather than the start argument."""
+
     def reverse(self):
         """Reverse the elements of the list in place."""
         temp = None
