@@ -39,6 +39,16 @@ class MyList:
         else:
             return True
 
+    def count(self, x):
+        count = 0
+        curr_node = self._head
+        """Return the number of times x appears in the list."""
+        for i in range(0, self.__len__()):
+            if curr_node._value == x:
+                count += 1
+            curr_node = curr_node._next
+        return count
+
     def extend(self, iterable):
         """Extend the list by appending all the items from the iterable. Equivalent to a[len(a):] = iterable."""
         for value in iterable:
@@ -176,7 +186,7 @@ class MyList:
         """adds a an iterable data structure to the double linked list"""
         ret_my_list = MyList()
         for item in self:
-            ret_my_list.append(item)
+            ret_my_list.append(item._value)
         for item in other:
             ret_my_list.append(item)
         return ret_my_list
