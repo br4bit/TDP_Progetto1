@@ -16,3 +16,8 @@ print(len(foo))
 foo.insert(5,10)
 print(foo)
 print(len(foo))
+foo2 = [2,3,4,5]
+print(len(foo))
+foo.extend(iter(foo2))
+print(foo)
+print(len(foo))

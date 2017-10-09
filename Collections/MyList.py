@@ -39,6 +39,11 @@ class MyList:
         else:
             return True
 
+    def extend(self, iterable):
+        """Extend the list by appending all the items from the iterable. Equivalent to a[len(a):] = iterable."""
+        for value in iterable:
+            self.append(value)
+
     def insert(self,i,x):
         new_node = Node(x,None,None)
         curr_node = self._head
