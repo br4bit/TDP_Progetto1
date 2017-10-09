@@ -161,13 +161,22 @@ class MyList:
         else:
             return False
 
-    def __getitem__(self, item):
+    def __getitem__(self, i):
         curr_node = self._head
-        k = 0
-        while curr_node is not None:
-            if curr_node._value == item:
-                return k
-            k += 1
+        if i >= self.__len__():
+            raise IndexError
+        elif i == 0:
+            return self._head
+        for k in range(0,self.__len__()):
+            if k == i:
+                return curr_node
             curr_node = curr_node._next
-        else:
-            return 'No item'
+
+    def __add__(self, other):
+        """adds a an iterable data structure to the double linked list"""
+        ret_my_list = MyList()
+        for item in self:
+            ret_my_list.append(item)
+        for item in other:
+            ret_my_list.append(item)
+        return ret_my_list

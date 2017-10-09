@@ -21,3 +21,7 @@ print(len(foo))
 foo.extend(iter(foo2))
 print(foo)
 print(len(foo))
+foo3 = [10,11,12,13]
+#print(foo.__getitem__(13)._value)
+#foo.__add__(foo3)
+print(foo)
