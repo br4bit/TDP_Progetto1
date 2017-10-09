@@ -1,6 +1,6 @@
 from Collections.MyList import MyList
 
-foo = MyList(['hey','i\'m','r4bit\'s','script'])
+foo = MyList(['hey','i\'m','tdp','project'])
 foo.append(2)
 foo.append(3)
 foo.append(4)
