@@ -103,22 +103,26 @@ class MyList:
              the search to a particular subsequence of the list. The returned index is computed relative to the beginning
               of the full sequence rather than the start argument."""
         if (start and end) is not None:
+            not_found = True
             curr_node = self.__getitem__(start)
-            while start < end:
+            while start < end and not_found:
                 if curr_node._value == x:
-                    return start
+                     k = start
+                     not_found = False
                 curr_node = curr_node._next
                 start+=1
-            else:
+            if not_found:
                 raise ValueError
-
-        curr_node = self._head
-        for i in range(0,self.__len__()):
-            if curr_node._value == x:
-                return i
-            curr_node = curr_node._next
-        if i == self.__len__() - 1:
-            raise ValueError
+        elif (start and end) is None:
+            curr_node = self._head
+            for i in range(0,self.__len__()):
+                 if curr_node._value == x:
+                      k = i
+                      break
+                 curr_node = curr_node._next
+            if i == self.__len__() - 1:
+                raise ValueError
+        return k
 
     def reverse(self):
         """Reverse the elements of the list in place."""

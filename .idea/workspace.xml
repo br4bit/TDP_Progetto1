@@ -28,8 +28,8 @@
       <file leaf-file-name="MyList.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Collections/MyList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="112" column="32" lean-forward="true" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+            <state relative-caret-position="291">
+              <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -381,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507581662560</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix index(x,start,end)">
+      <created>1507582074539</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1507582074539</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TodoView">
@@ -448,7 +455,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="test22" />
     <MESSAGE value="change" />
     <MESSAGE value="change2" />
@@ -473,7 +479,8 @@
     <MESSAGE value="index(x" />
     <MESSAGE value="progressing index(x,start,end)" />
     <MESSAGE value="implemented index" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented index" />
+    <MESSAGE value="fix index(x,start,end)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix index(x,start,end)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -748,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Collections/MyList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="112" column="32" lean-forward="true" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+        <state relative-caret-position="291">
+          <caret line="116" column="34" lean-forward="true" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
           <folding />
         </state>
       </provider>
