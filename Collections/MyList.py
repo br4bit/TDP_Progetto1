@@ -102,15 +102,7 @@ class MyList:
             The optional arguments start and end are interpreted as in the slice notation and are used to limit
              the search to a particular subsequence of the list. The returned index is computed relative to the beginning
               of the full sequence rather than the start argument."""
-        if (start and end) is None:
-            curr_node = self._head
-            for i in range(0,self.__len__()):
-                if curr_node._value == x:
-                    return i
-                curr_node = curr_node._next
-            if i == self.__len__() - 1:
-                raise ValueError
-        elif (start and end) is not None:
+        if (start and end) is not None:
             curr_node = self.__getitem__(start)
             while start < end:
                 if curr_node._value == x:
@@ -119,6 +111,14 @@ class MyList:
                 start+=1
             else:
                 raise ValueError
+
+        curr_node = self._head
+        for i in range(0,self.__len__()):
+            if curr_node._value == x:
+                return i
+            curr_node = curr_node._next
+        if i == self.__len__() - 1:
+            raise ValueError
 
     def reverse(self):
         """Reverse the elements of the list in place."""
