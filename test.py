@@ -35,4 +35,4 @@ fooeq4=[5,22,90]
 print(fooeq1 != fooeq3)
 print(fooeq1 == fooeq3)
 foo.suffissi()
-print(fooeq1 <= fooeq2)
+print(fooeq1 <= fooeq3)
