@@ -194,7 +194,7 @@ class MyList:
             current = current._next
         return "(HEAD) {items} (TAIL)".format(items=" <--> ".join(map(str, to_print)))
 
-    def ciao(self):
+    def stamp(self):
         result = ""
         curr_node = self._head
         while curr_node is not None:
