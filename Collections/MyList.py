@@ -57,12 +57,12 @@ class MyList:
     def copy(self):
         return self.__add__()
 
-    def insert(self,i,x):
-        new_node = Node(x,None,None)
+    def insert(self, i, x):
+        new_node = Node(x, None, None)
         curr_node = self._head
         if i > self.__len__():
             return 'index out of range'
-        #list is empty
+        # list is empty
         if self.isEmpty():
             self._head = new_node
             self._head._prev = self._head
@@ -77,12 +77,12 @@ class MyList:
                 self.append(new_node._value)
                 return
             else:
-                for k in range(0, i-1):
-                  curr_node = curr_node._next
-                  new_node._next = curr_node._next
-                  new_node._prev = curr_node
-                  if curr_node._next is not None:
-                     curr_node._next._prev = new_node
+                for k in range(0, i - 1):
+                    curr_node = curr_node._next
+                    new_node._next = curr_node._next
+                    new_node._prev = curr_node
+                    if curr_node._next is not None:
+                        curr_node._next._prev = new_node
                 curr_node._next = new_node
 
     def remove(self, x):
@@ -97,7 +97,7 @@ class MyList:
         else:
             return 'No such ' + str(x)
 
-    def index(self,x,start=None,end=None):
+    def index(self, x, start=None, end=None):
         """Return zero-based index in the list of the first item whose value is x. Raises a ValueError if there is no such item.
             The optional arguments start and end are interpreted as in the slice notation and are used to limit
              the search to a particular subsequence of the list. The returned index is computed relative to the beginning
@@ -107,19 +107,19 @@ class MyList:
             curr_node = self.__getitem__(start)
             while start < end and not_found:
                 if curr_node._value == x:
-                     k = start
-                     not_found = False
+                    k = start
+                    not_found = False
                 curr_node = curr_node._next
-                start+=1
+                start += 1
             if not_found:
                 raise ValueError
         elif (start and end) is None:
             curr_node = self._head
-            for i in range(0,self.__len__()):
-                 if curr_node._value == x:
-                      k = i
-                      break
-                 curr_node = curr_node._next
+            for i in range(0, self.__len__()):
+                if curr_node._value == x:
+                    k = i
+                    break
+                curr_node = curr_node._next
             if i == self.__len__() - 1:
                 raise ValueError
         return k
@@ -187,6 +187,14 @@ class MyList:
         return i
 
     def __str__(self):
+        current = self._head
+        to_print = []
+        while current:
+            to_print.append(current._value)
+            current = current._next
+        return "(HEAD) {items} (TAIL)".format(items=" <--> ".join(map(str, to_print)))
+
+    def ciao(self):
         result = ""
         curr_node = self._head
         while curr_node is not None:
@@ -206,7 +214,7 @@ class MyList:
             raise IndexError
         elif i == 0:
             return self._head
-        for k in range(0,self.__len__()):
+        for k in range(0, self.__len__()):
             if k == i:
                 return curr_node
             curr_node = curr_node._next
@@ -224,3 +232,42 @@ class MyList:
                 ret_my_list.append(item)
         return ret_my_list
 
+    def __iadd__(self, other=None):
+        if other is not None:
+            for item in other:
+                self.append(item)
+        return self
+
+    def __eq__(self, other):
+        curr_node = self._head
+        if len(self) != len(other):
+            return False
+        else:
+            are_equals = True
+            for item in other:
+                if item._value not in self:
+                    are_equals = False
+                    break
+                curr_node = curr_node._next
+        return are_equals
+
+    def __ne__(self, other):
+        curr_node = self._head
+        if len(self) != len(other):
+            return True
+        else:
+            are_nequals = False
+            for item in other:
+                if item._value not in self:
+                    are_nequals = True
+                    break
+                curr_node = curr_node._next
+        return are_nequals
+
+    def __setitem__(self, index, element):
+        """Sets the item at a given index to a new element."""
+        self.insert(index, element)
+
+    def __delitem__(self, key):
+        """Delete the item at a given index."""
+        self.pop(self.index(key))
