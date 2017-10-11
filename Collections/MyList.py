@@ -239,42 +239,38 @@ class MyList:
         return self
 
     def __eq__(self, other):
-        is_list = str(other.__class__).__contains__('list')
-        curr_node = self._head
+        is_MyList = str(other.__class__).__contains__('MyList')
         if len(self) != len(other):
             return False
-        elif is_list:
-            are_equals = True
-            for item in other:
-                if item not in self:
+        curr_node = self._head
+        are_equals = True
+        for item in other:
+            if is_MyList:
+                if item._value not in self:
                     are_equals = False
                     break
                 curr_node = curr_node._next
-        elif not is_list:
-            are_equals = True
-            for item in other:
-                if item._value not in self:
+            else:
+                if item not in self:
                     are_equals = False
                     break
                 curr_node = curr_node._next
         return are_equals
 
     def __ne__(self, other):
-        is_list = str(other.__class__).__contains__('list')
-        curr_node = self._head
         if len(self) != len(other):
             return True
-        elif is_list:
-            are_nequals = False
-            for item in other:
-                if item not in self:
+        is_MyList = str(other.__class__).__contains__('MyList')
+        curr_node = self._head
+        are_nequals = False
+        for item in other:
+            if is_MyList:
+                if item._value not in self:
                     are_nequals = True
                     break
                 curr_node = curr_node._next
-        elif not is_list:
-            are_nequals = False
-            for item in other:
-                if item._value not in self:
+            else:
+                if item not in self:
                     are_nequals = True
                     break
                 curr_node = curr_node._next
