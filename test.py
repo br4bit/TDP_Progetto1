@@ -31,4 +31,5 @@ print(foo.index(4))
 fooeq1=MyList([4,5,19])
 fooeq2=MyList([4,5,9])
 fooeq3=[4,5,9]
-print(fooeq1 != fooeq2)
+print(fooeq1 != fooeq3)
+print(fooeq1 == fooeq3)
