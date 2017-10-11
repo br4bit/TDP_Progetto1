@@ -278,6 +278,7 @@ class MyList:
 
     def __setitem__(self, index, element):
         """Sets the item at a given index to a new element."""
+        self.pop(index)
         self.insert(index, element)
 
     def __delitem__(self, key):
