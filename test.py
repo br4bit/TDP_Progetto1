@@ -14,7 +14,7 @@ print(foo)
 #print(foo.remove(3))
 print(len(foo))
 foo.insert(5,10)
-print(foo)
+print('aggiunto',foo)
 print(len(foo))
 foo2 = [2,3,4,5]
 print(len(foo))
@@ -33,3 +33,4 @@ fooeq2=MyList([4,5,9])
 fooeq3=[4,5,9]
 print(fooeq1 != fooeq3)
 print(fooeq1 == fooeq3)
+foo.suffissi()

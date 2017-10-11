@@ -69,6 +69,7 @@ class MyList:
         else:
             if i == 0:
                 new_node._next = self._head
+                self._head._prev = new_node
                 self._head = new_node
                 if self.__len__() == 0:
                     self._tail = new_node
@@ -77,13 +78,43 @@ class MyList:
                 self.append(new_node._value)
                 return
             else:
-                for k in range(0, i - 1):
+                #self._insertToMiddle(x,curr_node,self.__getitem__(i))
+                self.insertbeforenode(x, self.__getitem__(i-1))
+
+    def insertbeforenode(self, data, value_search):
+            new_node = Node(data,None,None)
+            curr_node = self._head
+            while curr_node:
+                if curr_node._value == value_search._value:
+                    new_node._prev = curr_node._prev
+                    new_node._next = curr_node
+                    curr_node._prev = new_node
+                    new_node._prev._next = new_node  # <--
+                    break  # find node and quit loop
+                else:
                     curr_node = curr_node._next
-                    new_node._next = curr_node._next
-                    new_node._prev = curr_node
-                    if curr_node._next is not None:
-                        curr_node._next._prev = new_node
-                curr_node._next = new_node
+
+    def _insertToMiddle(self, value, left, right):
+        # Iterate double linked list
+        while True:
+            # Test for intersection
+            if left._next is right:
+                print('sono qua')
+                node = Node(value, left, right)
+                left._next = node
+                right._prev = node
+                return
+            elif left is right:
+                print('no sono qua')
+                node = Node(value, left._prev, right._next)
+                left._next = node
+                right._next._prev = node
+                return
+            # Next iteration node
+            left = left._next
+            right = right._prev
+            if not left or not right:
+                return
 
     def remove(self, x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
@@ -186,7 +217,7 @@ class MyList:
             node_iter = node_iter._next
         return i
 
-    def __str__(self):
+    def stamp(self):
         current = self._head
         to_print = []
         while current:
@@ -194,7 +225,7 @@ class MyList:
             current = current._next
         return "(HEAD) {items} (TAIL)".format(items=" <--> ".join(map(str, to_print)))
 
-    def stamp(self):
+    def __str__(self):
         result = ""
         curr_node = self._head
         while curr_node is not None:
@@ -284,3 +315,14 @@ class MyList:
     def __delitem__(self, key):
         """Delete the item at a given index."""
         self.pop(self.index(key))
+
+    def suffissi(self):
+        curr_node = self._tail
+        s = "["
+        i = self.__len__()
+        print(s + ']')
+        while i > 0 :
+            s = "{0},".format(str(curr_node._value)) + s
+            print('['+s+']]')
+            i-=1
+            curr_node = curr_node._prev
