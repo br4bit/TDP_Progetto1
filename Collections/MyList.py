@@ -372,10 +372,13 @@ class MyList:
     def suffissi(self):
         curr_node = self._tail
         s = ""
+        #f="[]-->"
         i = self.__len__()
         print('[' + s + ']')
         while i > 0:
             s = "{0},".format(str(curr_node._value)) + s
             print('['+s[:-1]+']')
+            #f=f+'['+s[:-1]+']' + '-->'
             i-=1
             curr_node = curr_node._prev
+        #print(f)
