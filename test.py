@@ -28,9 +28,11 @@ print(foo.count(5))
 print(5 in foo)
 print(foo.copy())
 print(foo.index(4))
-fooeq1=MyList([4,5,19])
+fooeq1=MyList([2,12,9])
 fooeq2=MyList([4,5,9])
-fooeq3=[4,5,9]
+fooeq3=[5,22,200]
+fooeq4=[5,22,90]
 print(fooeq1 != fooeq3)
 print(fooeq1 == fooeq3)
 foo.suffissi()
+print(fooeq1 <= fooeq2)

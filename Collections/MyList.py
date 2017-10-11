@@ -315,6 +315,60 @@ class MyList:
         """Delete the item at a given index."""
         self.pop(self.index(key))
 
+    def __le__(self, other):
+        is_MyList = str(other.__class__).__contains__('MyList')
+        curr_node = self._head
+        are_lequals = False
+        for item in other:
+            if is_MyList:
+                if curr_node._value < item._value:
+                    are_lequals = True
+                    break
+                curr_node = curr_node._next
+            else:
+                if curr_node._value < item:
+                    are_lequals = True
+                    break
+                curr_node = curr_node._next
+        return are_lequals
+
+    def __ge__(self, other):
+        is_MyList = str(other.__class__).__contains__('MyList')
+        curr_node = self._head
+        are_gequals = False
+        for item in other:
+            if is_MyList:
+                if curr_node._value >= item._value:
+                    are_gequals = True
+                    break
+                curr_node = curr_node._next
+            else:
+                if curr_node._value >= item:
+                    are_gequals = True
+                    break
+                curr_node = curr_node._next
+        return are_gequals
+
+    def __gt__(self, other):
+        is_MyList = str(other.__class__).__contains__('MyList')
+        curr_node = self._head
+        are_gtequals = False
+        for item in other:
+            if is_MyList:
+                if curr_node._value > item._value:
+                    are_gtequals = True
+                    break
+                curr_node = curr_node._next
+            else:
+                if curr_node._value > item:
+                    are_gtequals = True
+                    break
+                curr_node = curr_node._next
+        return are_gtequals
+
+    def suffissi_ric(self):
+        s=""
+
     def suffissi(self):
         curr_node = self._tail
         s = "["
