@@ -13,7 +13,7 @@ foo.reverse()
 print(foo)
 #print(foo.remove(3))
 print(len(foo))
-foo.insert(5,10)
+foo.insert(5,100)
 print('aggiunto',foo)
 print(len(foo))
 foo2 = [2,3,4,5]

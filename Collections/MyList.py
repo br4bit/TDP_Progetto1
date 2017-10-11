@@ -78,7 +78,6 @@ class MyList:
                 self.append(new_node._value)
                 return
             else:
-                #self._insertToMiddle(x,curr_node,self.__getitem__(i))
                 self.insertbeforenode(x, self.__getitem__(i-1))
 
     def insertbeforenode(self, data, value_search):
@@ -94,7 +93,7 @@ class MyList:
                 else:
                     curr_node = curr_node._next
 
-    def _insertToMiddle(self, value, left, right):
+    """def _insertToMiddle(self, value, left, right):
         # Iterate double linked list
         while True:
             # Test for intersection
@@ -114,7 +113,7 @@ class MyList:
             left = left._next
             right = right._prev
             if not left or not right:
-                return
+                return"""
 
     def remove(self, x):
         """Remove the first item from the list whose value is x. It is an error if there is no such item."""
