@@ -14,8 +14,7 @@ class MyList:
                         for k in range(len(args[index])):
                             self.append(args[index][k])
                     except TypeError:
-                        for element in args:
-                            self.append(element)
+                            self.append(args[index])
 
     def append(self, x):
         """Add an item to the end of the list."""
@@ -382,3 +381,58 @@ class MyList:
             i-=1
             curr_node = curr_node._prev
         #print(f)
+
+    # Function to merge two linked list
+    def _merge(self, first, second):
+        # If first linked list is empty
+        if first is None:
+            return second
+
+            # If second linked list is empty
+        if second is None:
+            return first
+
+        # Pick the smaller value
+        if first._value < second._value:
+            first._next = self._merge(first._next, second)
+            first._next._prev = first
+            first._prev = None
+            return first
+        else:
+            second._next = self._merge(first, second._next)
+            second._next._prev = second
+            second._prev = None
+            return second
+            # Function to do merge sort
+
+    def sort(self,key=None,Reverse=None):
+        self._mergeSort(self._head)
+
+    def _mergeSort(self, tempHead):
+            if tempHead is None:
+                return tempHead
+            if tempHead._next is None:
+                return tempHead
+            second = self._split(tempHead)
+            # Recur for left and righ halves
+            tempHead = self._mergeSort(tempHead)
+            second = self._mergeSort(second)
+            # Merge the two sorted halves
+            return self._merge(tempHead, second)
+            # Split the doubly linked list (DLL) into two DLLs
+            # of half sizes
+
+    def _split(self, tempHead):
+                fast = slow = tempHead
+                while (True):
+                    if fast._next is None:
+                        break
+                    if fast._next._next is None:
+                        break
+                    fast = fast._next._next
+                    slow = slow._next
+
+                temp = slow._next
+                slow._next = None
+                return temp
+
