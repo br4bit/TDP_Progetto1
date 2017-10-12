@@ -388,7 +388,7 @@ class MyList:
         if first is None:
             return second
 
-            # If second linked list is empty
+        # If second linked list is empty
         if second is None:
             return first
 
@@ -419,7 +419,7 @@ class MyList:
             second = self._mergeSort(second)
             # Merge the two sorted halves
             return self._merge(tempHead, second)
-            # Split the doubly linked list (DLL) into two DLLs
+            # Split the doubly linked list into two DLLs
             # of half sizes
 
     def _split(self, tempHead):
