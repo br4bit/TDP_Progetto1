@@ -4,6 +4,7 @@ from Collections.Node import Node
 class MyList:
     # _head = None
     # _tail = None
+    i = 0
 
     def __init__(self, *args):
         self._head = self._tail = None
@@ -365,10 +366,19 @@ class MyList:
                 curr_node = curr_node._next
         return are_gtequals
 
-    def suffissi_ric(self):
-       s=""
+    def _suffix_rec(self,node,s):
+        if node is not None:
+            print('[' + s[:-1]+']')
+            s = "{0},".format(str(node._value)) + s
+        else:
+            return s
+        node = node._prev
+        self._suffix_rec(node,s)
 
-    def suffissi(self):
+    def suffix_rec(self):
+        self._suffix_rec(self._tail,s='')
+
+    def suffix(self):
         curr_node = self._tail
         s = ""
         #f="[]-->"
@@ -382,16 +392,14 @@ class MyList:
             curr_node = curr_node._prev
         #print(f)
 
-    # Function to merge two linked list
     def _merge(self, first, second):
+        # Function to merge two linked list
         # If first linked list is empty
         if first is None:
             return second
-
         # If second linked list is empty
         if second is None:
             return first
-
         # Pick the smaller value
         if first._value < second._value:
             first._next = self._merge(first._next, second)
@@ -414,7 +422,7 @@ class MyList:
             if tempHead._next is None:
                 return tempHead
             second = self._split(tempHead)
-            # Recur for left and righ halves
+            # Recur for left and right nodes list
             tempHead = self._mergeSort(tempHead)
             second = self._mergeSort(second)
             # Merge the two sorted halves

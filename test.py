@@ -34,9 +34,11 @@ fooeq3=[5,22,200]
 fooeq4=[5,22,90]
 print(fooeq1 != fooeq3)
 print(fooeq1 == fooeq3)
-foo.suffissi()
+foo.suffix()
 print(fooeq1 <= fooeq3)
 foo4 =  MyList(2,3,44,5,6,7,8,fooeq4,fooeq3)
 print(foo4)
 foo4.sort()
 print(foo4)
+print('ciao')
+foo.suffix_rec()
