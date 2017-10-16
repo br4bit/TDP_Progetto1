@@ -4,7 +4,6 @@ from Collections.Node import Node
 class MyList:
     # _head = None
     # _tail = None
-    i = 0
 
     def __init__(self, *args):
         self._head = self._tail = None
