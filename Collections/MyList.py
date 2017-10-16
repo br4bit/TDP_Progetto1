@@ -371,7 +371,7 @@ class MyList:
             print('[' + s[:-1]+']')
             s = "{0},".format(str(node._value)) + s
         else:
-            return s
+            return print('['+s[:-1]+']')
         node = node._prev
         self._suffix_rec(node,s)
 

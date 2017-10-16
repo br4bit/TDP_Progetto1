@@ -31,8 +31,8 @@
       <file leaf-file-name="MyList.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Collections/MyList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="375" column="22" lean-forward="false" selection-start-line="375" selection-start-column="22" selection-end-line="375" selection-end-column="22" />
+            <state relative-caret-position="294">
+              <caret line="373" column="36" lean-forward="false" selection-start-line="373" selection-start-column="36" selection-end-line="373" selection-end-column="36" />
               <folding>
                 <element signature="e#3294#4033#1" expanded="false" />
               </folding>
@@ -505,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507810545139</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added suffix recursive">
+      <created>1508145360232</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1508145360232</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -572,7 +579,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added doc" />
     <MESSAGE value="added remove(x)" />
     <MESSAGE value="fix code" />
     <MESSAGE value="added __getitem___" />
@@ -597,7 +603,8 @@
     <MESSAGE value="added __le__ __ge__ __gt__" />
     <MESSAGE value="fix suffissi" />
     <MESSAGE value="implemented sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented sort" />
+    <MESSAGE value="added suffix recursive" />
+    <option name="LAST_COMMIT_MESSAGE" value="added suffix recursive" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1055,8 +1062,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Collections/MyList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="375" column="22" lean-forward="false" selection-start-line="375" selection-start-column="22" selection-end-line="375" selection-end-column="22" />
+        <state relative-caret-position="294">
+          <caret line="373" column="36" lean-forward="false" selection-start-line="373" selection-start-column="36" selection-end-line="373" selection-end-column="36" />
           <folding>
             <element signature="e#3294#4033#1" expanded="false" />
           </folding>
