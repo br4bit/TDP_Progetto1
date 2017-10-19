@@ -390,25 +390,7 @@ class MyList:
                 s = s + "[" + list + "]" + ", "
                 list = "," + list
             else:
-                s = s + "[" + list + "]" # va bene così?perfetto grazie XD non ci avevo proprio pensato che mongoloide XD, la ricorsiva mo chissù xD
-                #la vuoi vedere? ok
-
-            #print (s)
-            #deve uscire come la ma tu la devi fare con la print o string? con string, con la print riesco a fare
-            #la string no mi ritornam uana stringa ma ora manco va bene però.. vabbè è easy da aggiustare ora con la print
-            #basta modificare quella s la sopra, tu comunque non lo pensare ora voglio formattare una stirnga in quel modo
-            #capito? si, ora ti faccio vedere, in pratica lo vedi il [] [6] e [5] mi deve togliere quelle partensi di merda
-            #e mettere [5,6,[]],[6,[]]
-            #ora ti faccio vedere la ricorsiva è fatta con la print e va bene si
-            #con la print si riesce a fare il problema è come fare una stringa in quel modo
-            #il \n vabbe lo togli e lo rimpiazzi con le virgole yes,ora guarda se io nella s sopra format metto la virgola
-            #la mette a tutti gli elementi giustamente
-            #tu dici è sbagliata proprio la logica? cioè boh si credo sia sbagliata
-            #perchè con la stringa devo prendere il corrente e il predecessore e metterli dentro òa stringa non solo il predecessore piu vicino ma anche gli altri.. dipende a che step sei
-            #per quelli vecchi non ho problemi perchè concateno no? cioè è troppo complicata farla così no?
-            #alla fine è più semplice fare una print xD nella funzione che cazz mi ritorni una stringa no tator devi farlo con la stringa.. non ha senso avere una funzone di sola stampa.. è utile ma molto limitato
-            #oppure ha detto puoi usare stessa una lista fai append dei sotto elementi
-            #  non mette le virgole? in pratica non la separa capito? tra parentesi quadre guarda se metto la print
+                s = s + "[" + list + "]"
             curr_node = curr_node._prev
         return s
 

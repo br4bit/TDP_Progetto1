@@ -6,7 +6,7 @@ foo.append(3)
 foo.append(4)
 foo.append(5)
 foo.append(6)
-"""print(len(foo))
+print(len(foo))
 print(foo.pop(9))
 print(foo)
 foo.reverse()
@@ -34,26 +34,16 @@ fooeq3=[5,22,200]
 fooeq4=[5,22,90]
 print(fooeq1 != fooeq3)
 print(fooeq1 == fooeq3)
-"""
-
-
 print('lista da suffis')
 print(foo)
 print('inizio suffissi')
 print(foo.suffix())
-print(foo.suffix_rec())
-
-
-
-
-
-
-
-
-"""print(fooeq1 <= fooeq3)
+print(fooeq1 <= fooeq3)
 foo4 =  MyList(2,3,44,5,6,7,8,fooeq4,fooeq3)
 print(foo4)
 foo4.sort()
 print(foo4)
 print('ciao')
-foo4.suffix_rec()"""
+print(foo4.suffix_rec())
+foo33=[5,3,4,90]
+print(foo33)
