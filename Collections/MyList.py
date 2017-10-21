@@ -416,6 +416,8 @@ class MyList:
             # Function to do merge sort
 
     def sort(self,key = None,reverse = None):
+        """Sort the items of the list in place
+        the arguments can be used for sort customization"""
         if reverse is not None:
             self._mergeSort(self._head)
             self.reverse()
@@ -437,6 +439,7 @@ class MyList:
             # of half sizes
 
     def _split(self, tempHead):
+        #fast split in two dlls
                 fast = slow = tempHead
                 while (True):
                     if fast._next is None:
@@ -445,7 +448,6 @@ class MyList:
                         break
                     fast = fast._next._next
                     slow = slow._next
-
                 temp = slow._next
                 slow._next = None
                 return temp
