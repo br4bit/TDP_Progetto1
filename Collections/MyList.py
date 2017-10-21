@@ -394,61 +394,25 @@ class MyList:
             curr_node = curr_node._prev
         return s
 
-    def _merge(self, first, second):
-        # Function to merge two linked list
-        # If first linked list is empty
-        if first is None:
-            return second
-        # If second linked list is empty
-        if second is None:
-            return first
-        # Pick the smaller value
-        if first._value < second._value:
-            first._next = self._merge(first._next, second)
-            first._next._prev = first
-            first._prev = None
-            return first
-        else:
-            second._next = self._merge(first, second._next)
-            second._next._prev = second
-            second._prev = None
-            return second
-            # Function to do merge sort
-
     def sort(self,key = None,reverse = None):
         """Sort the items of the list in place
         the arguments can be used for sort customization"""
         if reverse is not None:
-            self._mergeSort(self._head)
+            self._sortFast()
             self.reverse()
         else:
-            self._mergeSort(self._head)
+            self._sortFast()
 
-    def _mergeSort(self, tempHead):
-            if tempHead is None:
-                return tempHead
-            if tempHead._next is None:
-                return tempHead
-            second = self._split(tempHead)
-            # Recur for left and right nodes list
-            tempHead = self._mergeSort(tempHead)
-            second = self._mergeSort(second)
-            # Merge the two sorted halves
-            return self._merge(tempHead, second)
-            # Split the doubly linked list into two DLLs
-            # of half sizes
-
-    def _split(self, tempHead):
-        #fast split in two dlls
-                fast = slow = tempHead
-                while (True):
-                    if fast._next is None:
-                        break
-                    if fast._next._next is None:
-                        break
-                    fast = fast._next._next
-                    slow = slow._next
-                temp = slow._next
-                slow._next = None
-                return temp
-
+    def _sortFast(self):
+          if self._head and self._head._next:
+            i = self._head
+            while i._next:
+                selected = i
+                j = i._next
+                while j:
+                    if j._value < selected._value:
+                        selected = j
+                    j = j._next
+                if not selected==i:
+                    i._value, selected._value = selected._value, i._value
+                i = i._next

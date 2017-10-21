@@ -47,3 +47,6 @@ print('ciao')
 print(foo4.suffix_rec())
 foo33=[5,3,4,90]
 print(foo33)
+foo44=MyList([1,222,33,90,20,11,22,4,5,9])
+foo44.sort(None,True)
+print(foo44)
